@@ -95,13 +95,26 @@ MAPE = np.mean(np.abs((y_true - y_pred) / y_true)) * 100  # % ผิดพลา
 
 ---
 
-## Learning Path (notebook นี้)
+## โครงสร้าง Notebooks
 
-1. **EDA** — ดู pattern Solar vs Wind
-2. **Feature Engineering** — สร้าง time + lag + rolling features
-3. **Train XGBoost** — ด้วย synthetic dataset (เรียนรู้ก่อนได้ data จริง)
-4. **Evaluate** — RMSE, MAE, MAPE + visualize
-5. **Hyperparameter tuning** — `n_estimators`, `max_depth`, `learning_rate`
+```
+01-forecasting/
+├── xgboost-timeseries/              ← Main approach (แนะนำ)
+│   ├── mini_example.ipynb           รันครบใน 2 นาที — ทดสอบ pipeline
+│   ├── full_tutorial.ipynb          สอนละเอียดทุก step
+│   └── feature_model_techniques.ipynb  SHAP, Optuna, LightGBM, Fourier
+└── alternative-methods/             ← วิธีอื่นที่ไม่ใช้ lag
+    └── notebook.ipynb               Interpolation, Prophet, KNN, MLP, SVR
+```
+
+## เริ่มจากไหนดี?
+
+```
+ใหม่กับ forecasting     → xgboost-timeseries/mini_example.ipynb
+เรียนรู้ครบถ้วน          → xgboost-timeseries/full_tutorial.ipynb
+เทคนิค feature/model    → xgboost-timeseries/feature_model_techniques.ipynb
+วิธีอื่นนอกจาก XGBoost  → alternative-methods/notebook.ipynb
+```
 
 ---
 
